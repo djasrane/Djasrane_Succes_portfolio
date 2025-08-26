@@ -224,78 +224,101 @@ padd-15 {
 .home {
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap; /* permet de passer à la ligne */
+    align-items: center;
     color: var(--text-black-900);
+    gap: 20px;
 }
+
 .home .home-info {
-    flex: 0 0 60%;
-    max-width: 40%;
+    flex: 1 1 500px;
+    max-width: 600px;
 }
+
 h3.hello {
-    font-size: 28px;
+    font-size: clamp(24px, 3vw, 28px);
     margin: 15px 0;
 }
 h3.hello span {
-    font-family: 'Clicker script' , cursive;
-    font-size: 30px;
+    font-family: 'Clicker script', cursive;
+    font-size: clamp(26px, 3.2vw, 30px);
     font-weight: 700;
     color: var(--skin-color);
 }
 h3.my-profession {
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
     margin: 15px 0;
 }
 .typing {
     color: var(--skin-color);
 }
 .home-info p {
-    margin-bottom: 70px;
-    font-size: 20px;
+    margin-bottom: 40px;
+    font-size: clamp(16px, 2vw, 20px);
     color: var(--text-black-700);
+    line-height: 1.6;
 }
+
 .home .home-img {
-    flex: 0 0 40%;
+    flex: 1 1 300px;
     text-align: center;
     position: relative;
-    margin-left: 190px;
-    margin-top: 90px;
-    max-width: 150%;
-}
-.home-img::after
-{
-   content: '';
-   position: absolute;
-   height: 70px;
-   width: 70px;
-   border-bottom: 10px solid var(--skin-color);
-   border-right: 10px solid var(--skin-color);
-   right: 2px;
-   left: 290px;
-   top: 400px;
-   max-width: 150%;
-
-}
-.home-img::before
-{
-   content: '';
-   position: absolute;
-   height: 70px;
-   width: 70px;
-   border-top: 10px solid var(--skin-color);
-   border-left: 10px solid var(--skin-color);
-   left: -190px;
-   top: -50px;
-   margin-left: 30px;
-
-}
-
-.home .home-img img
-{
+    max-width: 400px;
     margin: auto;
-    border-radius: 5px;
-    height: 400px;
-    max-width: 300%;
-    margin-left: -160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.home .home-img img {
+    border-radius: 5px;
+    height: auto;
+    max-width: 90%;
+}
+
+/* Barres décoratives */
+.home-img::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-bottom: 8px solid var(--skin-color);
+    border-right: 8px solid var(--skin-color);
+    bottom: -25px;
+    right: -20px;
+}
+
+.home-img::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-top: 8px solid var(--skin-color);
+    border-left: 8px solid var(--skin-color);
+    top: -25px;
+    left: -20px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .home .home-info, 
+    .home .home-img {
+        max-width: 100%;
+    }
+    .home-info p {
+        text-align: justify;
+    }
+    /* Barres plus petites sur mobile */
+    .home-img::after,
+    .home-img::before {
+        height: 30px;
+        width: 30px;
+        border-width: 5px;
+    }
 }
 
 /* About */
@@ -570,7 +593,6 @@ h3.my-profession {
     cursor: pointer;
 }
 
-
 .services .row 
 {
   display: flex;
@@ -606,7 +628,7 @@ h3.my-profession {
 
 .services .service-item .service-item-inner h4
 {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 15px;
     color: var(--text-black-900);
     font-weight: 700;
@@ -710,9 +732,20 @@ h3.my-profession {
 }
 .papa 
 {
-     display: flex;
-     justify-content: space-between; /* ou center */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
 }
+
+.contact-info-item {
+    flex: 1 1 200px;  /* Chaque élément prend un minimum de 200px et s'adapte */
+    text-align: center;
+}
+.contact-info-item p {
+    word-wrap: break-word;  /* Permet de couper les longues chaînes */
+    margin-top: 5px;
+}
+
 .contact .contact-from {
     flex: 0 0 100%;
     max-width: 100%;
@@ -801,5 +834,16 @@ h3.my-profession {
     .about .about-content .personal-info{
         flex:  0 0 100%;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h3.hello,
+    h3.my-profession {
+        text-align: center;
+    }
+    
+    .home-info p {
+        text-align: justify;
     }
 }
