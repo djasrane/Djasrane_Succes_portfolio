@@ -53,10 +53,36 @@ Ce portfolio a pour objectif de **présenter mon identité numérique profession
 ### English
 This portfolio aims to **showcase my professional digital identity**, web development skills and personal projects. 
 
-### Interface vusuel
+##  Aperçu visuel / Live Preview
 
 
 
 ---<img width="1850" height="922" alt="Capture d’écran du 2025-10-16 14-56-29" src="https://github.com/user-attachments/assets/1e21e327-d516-4d3b-ba15-697175c29ba1" />
+
+
+
+##  Auteur / Author
+
+| Nom | Rôle | Contact |
+|------|------|--------|
+| **Djasrane Tolba Succès** | Développeur web et web mobile | *(succesdjasranetolba@gmail.com)* |
+
+---
+
+##  Contact
+
+-  Email : *(succesdjasranetolba@gmail.com)*  
+-  Portfolio : https://portefolio-djasranesuues.netlify.app
+
+---
+
+##  Statut
+
+ **Version actuelle en ligne et fonctionnelle**  
+ Évolutions prévues : Ajout de nouveaux projets, section blog, formulaire de contact interactif.
+
+---
+
+>  **N’hésitez pas à laisser une étoile ⭐ si vous aimez ce projet !**
 
 
