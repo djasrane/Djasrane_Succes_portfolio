@@ -738,7 +738,7 @@ h3.my-profession {
 }
 
 .contact-info-item {
-    flex: 1 1 200px;  /* Chaque élément prend un minimum de 200px et s'adapte */
+    flex: 1 1 200px;  
     text-align: center;
 }
 .contact-info-item p {
